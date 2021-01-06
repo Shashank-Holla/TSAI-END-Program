@@ -12,14 +12,14 @@ With previous RNN based Encoder-Decoder models, the decoder crammed a lot of inf
 
 ### Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation
 
-![](images/)
+![](images/seq2seq.png)
 
 In this RNN Encoder-Decoder based approach, the decoder takes the context vector (generated from encoder) along with embedded input token and previous hidden state to predict the next hidden state. The context vector is fed to the linear layer along with hidden output to predict the next token.
 
 
 ### Neural Machine Translation by Jointly Learning to Align and Translate
 
-![](images/)
+![](images/seq2seq10.png)
 
 The previous models for neural machine translation uses encoder-decoder architecture and consists of an encoder that encodes the source sentence into a fixed length context vector from which decodes generates the translation. This model puts forth that the use of a fixed length context vector is a bottleneck in improving the performance of this basic encoder-decoder architecture. It proposes to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.
 
