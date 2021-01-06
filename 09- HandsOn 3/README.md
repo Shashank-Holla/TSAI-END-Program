@@ -21,7 +21,7 @@ In this RNN Encoder-Decoder based approach, the decoder takes the context vector
 
 ![](images/seq2seq10.png)
 
-The previous models for neural machine translation uses encoder-decoder architecture and consists of an encoder that encodes the source sentence into a fixed length context vector from which decodes generates the translation. This model puts forth that the use of a fixed length context vector is a bottleneck in improving the performance of this basic encoder-decoder architecture. It proposes to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.
+The previous models for neural machine translation uses encoder-decoder architecture and consists of an encoder that encodes the source sentence into a fixed length context vector from which decoder generates the translation. This model puts forth that the use of a fixed length context vector is a bottleneck in improving the performance of this basic encoder-decoder architecture. It proposes to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.
 
 Encoder uses bidirectional GRU to encode the context vector. Bidirection GRUs create 2 context vector, one for each direction. Decoder block requires single context vector. This is created by concatenating the two context vectors together, passing them through a linear layer and applying the tanh activation function.
 
