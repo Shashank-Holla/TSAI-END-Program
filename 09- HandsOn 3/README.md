@@ -52,9 +52,11 @@ This corpus includes Wikipedia articles, factual questions manually generated fr
 
 Following are results captured on test set (validation set in case test set was not available). 
 
-| Dataset     | Test/Validation Loss | Test/Validation set perplexity score |
-|-------------|----------------------|--------------------------------------|
-| NarrativeQA |                      |                                      |
-| openBookQA  |                      |                                      |
-| QASC        |   5.269              |    194.271                           |
-| QnA dataset |                      |                                      |
+| Dataset     | Test/Validation Loss |         | Test/Validation set perplexity score |         |
+|-------------|----------------------|---------|--------------------------------------|---------|
+|             | Model 1              | Model 2 | Model 1                              | Model 2 |
+| NarrativeQA | 5.192                | 5.265   | 179.907                              | 193.382 |
+| openBookQA  | 4.381                | 4.388   | 79.880                               | 80.476  |
+| QASC        | 5.269                | 4.660   | 194.271                              | 105.639 |
+| QnA dataset | 2.943                | 2.757   | 18.979                               | 15.750  |
+
