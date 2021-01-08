@@ -43,6 +43,10 @@ OpenBookQA, inspired by open-book exams to assess human understanding of a subje
 
 QASC is a question-and-answer data set that focuses on sentence composition. It consists of 9,980 8-channel multiple-choice questions on elementary school science (8,134 train, 926 dev, 920 test)
 
+### Question-and-answer dataset
+
+This corpus includes Wikipedia articles, factual questions manually generated from them, and answers to these manually generated questions for use in academic research. This dataset contains around 2500 unique questions.
+
 
 ## Results
 
@@ -52,5 +56,5 @@ Following are results captured on test set (validation set in case test set was 
 |-------------|----------------------|--------------------------------------|
 | NarrativeQA |                      |                                      |
 | openBookQA  |                      |                                      |
-| QASC        |                      |                                      |
-|             |                      |                                      |
+| QASC        |   5.269              |    194.271                           |
+| QnA dataset |                      |                                      |
