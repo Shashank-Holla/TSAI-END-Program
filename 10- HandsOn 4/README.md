@@ -46,6 +46,7 @@ Test loss and bleu score for the two models are similar. But training time per e
 #### Source sentence to attention mapping
 
 X-axis : source sentence 
+
 Y-axis : predicted translation
 
 The lighter the square at the intersection between two words, the more attention the model gave to that source word when translating that target word.
