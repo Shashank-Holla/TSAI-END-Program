@@ -36,14 +36,20 @@ Packed padded sequences are used to tell RNN to skip over padding tokens in enco
 
 BLEU looks at the overlap in the predicted and actual target sequences in terms of their n-grams. Higher the Bleu score better is the translation.
 
-| Model   | Loss on test dataset  | Training time | Bleu Score on test set |
+Test loss and bleu score for the two models are similar. But training time per epoch has reduced for model with packed padded sequences and masking.
+
+| Model   | Loss on test dataset  | Training time per epoch | Bleu Score on test set |
 |---------|------------|---------------|------------|
 | Model 1  |  3.044    |    97 seconds |   27.15  |
 | Model 2  |  3.085    |    56 seconds |  27.18  |
 
 #### Source sentence to attention mapping
 
+X-axis : source sentence 
+Y-axis : predicted translation
+
 The lighter the square at the intersection between two words, the more attention the model gave to that source word when translating that target word.
+
 
 | Model 1  | Model 2  |
 |---|---|
