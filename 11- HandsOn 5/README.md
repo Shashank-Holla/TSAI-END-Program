@@ -37,6 +37,7 @@ X-axis : source sentence
 Y-axis : predicted translation
 
 Source sentence = 'ein', 'mann', 'in', 'einer', 'weste', 'sitzt', 'auf', 'einem', 'stuhl', 'und', 'hält', 'magazine', '.'
+
 Target sentence = 'a', 'man', 'in', 'a', 'vest', 'is', 'sitting', 'in', 'a', 'chair', 'and', 'holding', 'magazines', '.'
 
 Predicted sentence = 'a', 'man', 'in', 'a', 'vest', 'is', 'sitting', 'on', 'a', 'chair', 'holding', '<unk>', '.', '<EOS>'
