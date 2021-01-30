@@ -2,6 +2,10 @@
 
 This assignment's objective is to build convolution based Sequence to Sequence machine translation model to translate sentences from German to English.
 
+Compared to recurrent networks, convolutional models create fixed size context representations and this can be made larger by stacking convolutional layers on top of each other. This allows CNN control over the maximum length of of dependencies to be modeled. Similar to the idea of edges and gradients to textures to patterns to parts of objects being captured in multiple convolution blocks in image domain, Multi-layered CNN network creates hierarchical representation over the input sentence where nearby input elements interact at lower layers and distant elements interact at higher layers. Computations in convolutional network is applied over all elements in parallel in training and exploits the GPU hardware.
+
+The inner working of the convolution model's encoder-decoder modules is [here.](https://dev.to/shashankholla_10/convolutional-sequence-to-sequence-learning-a-closer-look-bdn)
+
 ## Architecture
 
 ### Encoder
