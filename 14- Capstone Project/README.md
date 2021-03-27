@@ -13,7 +13,7 @@ Comments with keywords 'write', 'python', 'program', 'function', 'class' were pi
 
 ### 2. Anomalies in the datset
 
-Missing/incorrect indentations for the Python codes were checked using ![check_indentation.py](check_indentation.py) script and corrected. English statements were corrected to include keywords and provide clear instructions for the Python code.
+Missing/incorrect indentations for the Python codes were checked using [check_indentation.py](check_indentation.py) script and corrected. English statements were corrected to include keywords and provide clear instructions for the Python code. autopep8 and tokenize packages were used to check the syntax of the Python code.
 
 ### 3. Maximum length of Python code for model
 
@@ -21,7 +21,39 @@ Length of each tokenized Python code was calculated to understand the frequency.
 
 ![](images/frequency_length.png)
 
+### 4. Tokenization for Python code
+
+tokenize package has been used for tokenizing python code. This is specially useful in cases with math operators, function name and its arguments. Tokenize is able to better generalize on math operators. Tokenizing on "range(2, num//2 + 1)" returns 'range',  '(',  '2',  ',',  'num',  '//',  '2',  '+',  '1',  ')', while with spacy-english tokenizer it returns 'range(2',  ',',  'num//2',  '+',  '1',  ')'.
+
+Python code
+```
+for i in range(2, num//2 + 1):
+        if (num % i) == 0:
+```
+
+
+Using spacy-english tokenizer
+ ```
+ 'for',  'i',  'in',  'range(2',  ',',  'num//2',  '+',  '1',  ')',  ':',  '\n        ',
+ 'if',  '(',  'num',  '%',  'i',  ')',  '=',  '=',  '0',  ':',
+ '\n 
+ ```
+
+Using tokenize package
+
+```
+'for',  'i',  'in',  'range',  '(',  '2',  ',',  'num',  '//',  '2',  '+',  '1',  ')',  ':',  '\n',
+ '        ',  'if',  '(',  'num',  '%',  'i',  ')',  '==',  '0',  ':',
+ '\n',
+ ```
+ 
+
+
 ## Model Architecture
+
+The model is based on self-attention, multi-head, and scaled-dot product attention. Self-attention is the method by which the transformer deciphers “understanding” of other relevant words into the currently processed word.
+
+![](images/transformer1.png)
 
 ### Model hyperparameters
 
@@ -33,11 +65,16 @@ Length of each tokenized Python code was calculated to understand the frequency.
 * Decoder Head= 8
 * Decoder PF dimension= 1024
 
-The following iterations were carried out to conclude the best fit model hyperparameters.
+The following iterations were carried out to conclude the best fit model hyperparameters. 
 
+|        |         | Encoder |      |        | Decoder |      |        |                  |            |          |           |
+|--------|---------|---------|------|--------|---------|------|--------|------------------|------------|----------|-----------|
+|        | Hid Dim | Layers  | Head | PF_dim | Layers  | Head | PF_dim | No of parameters | Train Loss | Val Loss | Test Loss |
+| Test 1 | 256     | 3       | 8    | 512    | 3       | 8    | 512    | 6,087,806        | 0.455      | 1.193    | 1.087     |
+| Test 2 | 512     | 3       | 8    | 1024   | 3       | 8    | 1024   | 20,036,734       | 0.275      | 1.129    | 1.059     |
+| Test 3 | 256     | 6       | 8    | 512    | 6       | 8    | 512    | 10,041,470       | 4.321      | 4.507    | 4.509     |
+| Test 4 | 512     | 6       | 8    | 1024   | 6       | 8    | 1024   | 35,808,382       | 4.47       | 7.612    | 4.512     |
 
-
-### Loss Function
 
 
 ## Results
@@ -54,7 +91,7 @@ The lighter the square at the intersection between two words, the more attention
 
 English statement: write a python program to   keep only the items that are present in both sets
 
-Actual Python code:
+Actual Python code (additonal space between words and at the start of newline is during list :
 
 ```
 x = { "apple" , "banana" , "cherry" } 
